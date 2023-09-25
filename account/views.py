@@ -1,7 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import (LoginView, LogoutView, PasswordChangeView,
+                                       PasswordChangeDoneView, PasswordResetView,
+                                       PasswordResetDoneView, PasswordResetConfirmView,
+                                       PasswordResetCompleteView)
 from django.contrib.auth.decorators import login_required
 
 from .forms import UserForm
@@ -38,10 +41,28 @@ def dashboard(request):
 
     data = dict()
     data['section'] = 'dashboard'
-    return render(request, 'registration/dashboard.html', data)
+    return render(request, 'accounts/dashboard.html', data)
 
 class UserLoginView(LoginView):
     pass
 
 class UserLogoutVieew(LogoutView):
+    pass
+
+class UserPasswordChangeView(PasswordChangeView):
+    pass
+
+class UserPasswordChangeDoneView(PasswordChangeDoneView):
+    pass
+
+class UserPasswordResetView(PasswordResetView):
+    pass
+
+class UserPasswordResetDoneView(PasswordResetDoneView):
+    pass
+
+class UserPasswordResetConfirmView(PasswordResetConfirmView):
+    pass
+
+class UserPasswordResetCompleteView(PasswordResetCompleteView):
     pass
