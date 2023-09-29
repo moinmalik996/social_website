@@ -5,11 +5,13 @@ urlpatterns = [
     # path('login/', views.user_login, name='login')
     path('', views.home, name='home'),
     path('dashboard/', views.dashboard, name='dashboard'),
-
-
+    
     # Auth Views
     path('register/', views.register, name='register'),
     path('edit/', views.edit, name='edit'),
+
+
+
     path('login/', views.UserLoginView.as_view(), name='login'),
     path('logout/', views.UserLogoutVieew.as_view(), name='logout'),
     path('change-password/', views.UserPasswordChangeView.as_view(), name='change_password'),
